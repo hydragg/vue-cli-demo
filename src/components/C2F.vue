@@ -2,14 +2,9 @@
   .c2f
     h3 Celsius: {{ celsius }} °C
     h3 Fahrenheit {{ fahrenheig }} °F
-    .temperature-input
-      input(v-model.number="userInput")
-    .selector
-      input(type="radio" id="c2f" value="c2f" v-model="mode")
-      label(for="c2f") C2F
-      <br>
-      input(type="radio" id="f2c" value="f2c" v-model="mode")
-      label(for="f2c") F2C
+    .userInput
+      b-form-input(v-model.number="userInput" maxlength="12")
+    b-form-radio(v-model="mode" :options="options")
 </template>
 
 <script>
@@ -17,7 +12,17 @@
     data() {
       return {
         userInput: 0,
-        mode: 'c2f'
+        mode: 'c2f',
+        options: [
+          {
+            text: 'C2F',
+            value: 'c2f'
+          },
+          {
+            text: 'F2C',
+            value: 'f2c'
+          }
+        ]
       }
     },
     computed: {
@@ -32,5 +37,11 @@
 </script>
 
 <style>
-  
+  .c2f {
+    width: 100%;
+  }
+  .userInput {
+    width: 200px;
+    margin: 0 auto;
+  }
 </style>
