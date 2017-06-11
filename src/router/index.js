@@ -16,6 +16,7 @@ export default new Router({
       path: '/c2f',
       name: 'c2f',
       component: C2F
-    }
+    },
+    { path: '/*', redirect: '/hello' }
   ]
 })
