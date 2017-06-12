@@ -3,7 +3,7 @@
     h3 Celsius: {{ celsius }} °C
     h3 Fahrenheit {{ fahrenheig }} °F
     .userInput
-      b-form-input(v-model.number="userInput" maxlength="12")
+      b-form-input(v-model.number="userInput" maxlength="8")
     b-form-radio(v-model="mode" :options="options")
 </template>
 
@@ -41,7 +41,7 @@
     width: 100%;
   }
   .userInput {
-    width: 200px;
+    width: 100px;
     margin: 0 auto;
   }
 </style>

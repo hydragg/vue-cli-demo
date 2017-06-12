@@ -4,6 +4,7 @@
     <div>
       <router-link to="/hello">Go to Hello</router-link>
       <router-link to="/c2f">Go to C2F</router-link>
+      <router-link to="/learn-component">Go to learnComponent</router-link>
     </div>
     <router-view></router-view>
   </div>
