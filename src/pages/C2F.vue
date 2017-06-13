@@ -39,6 +39,7 @@
 <style>
   .c2f {
     width: 100%;
+    margin-top: 200px;
   }
   .userInput {
     width: 100px;
