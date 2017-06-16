@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Hello from '@/pages/Hello'
 import C2F from '@/pages/C2F'
 import learnComponent from '@/pages/learnComponent'
+import Count from '@/pages/Count'
 
 Vue.use(Router)
 
@@ -22,6 +23,11 @@ export default new Router({
       path: '/learn-component',
       name: 'learn-component',
       component: learnComponent
+    },
+    {
+      path: '/count',
+      name: 'count',
+      component: Count
     },
     { path: '/*', redirect: '/hello' }
   ]
