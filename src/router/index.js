@@ -4,6 +4,7 @@ import Hello from '@/pages/Hello'
 import C2F from '@/pages/C2F'
 import learnComponent from '@/pages/learnComponent'
 import Count from '@/pages/Count'
+import Todo from '@/pages/Todo'
 
 Vue.use(Router)
 
@@ -28,6 +29,10 @@ export default new Router({
       path: '/count',
       name: 'count',
       component: Count
+    },{
+      path: '/todo',
+      name: 'todo',
+      component: Todo
     },
     { path: '/*', redirect: '/hello' }
   ]
