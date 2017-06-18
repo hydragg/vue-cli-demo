@@ -49,5 +49,13 @@ export const mutations = {
         break
       }
     }
+  },
+  [types.UPDATE_TODO](state, obj) {
+    for (let i in state.todos) {
+      if (obj.key === state.todos[i].key) {
+        state.todos[i].content = obj.change
+        break
+      }
+    }
   }
 }

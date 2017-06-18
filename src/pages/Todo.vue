@@ -10,10 +10,7 @@
             button.btn.btn-success(type="button" @click="addTodo") 
               span.glyphicon.glyphicon-plus
         ul
-          li(v-for="todo in todolist") 
-            label
-              input(type="checkbox" :checked="todo.done" @change="toggleTodo(todo.key)")
-              span {{ todo.content }}
+          todoItem(v-for="(todo, index) in todolist" :todo="todo" :key="index")
       .col-lg-3.col-sm-12
         h2 Done List:
         ul
@@ -29,8 +26,10 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
+import todoItem from '@/components/todoItem'
 
 export default {
+  components: { todoItem },
   data: function() {
     return {
       newTodo: ''
