@@ -1,9 +1,28 @@
 <template lang="pug">
-  .todo
-    h2 TodoList:
-    input(type="text" placeholder="Add todo" v-model="newTodo" @keyup.enter="addTodo")
-    ul
-      li(v-for="todo in todos") {{ todo.content }}
+  .container.todo
+    h1 Vue & Vuex Todo List example
+    .row
+      .col-lg-3.col-lg-offset-3.col-sm-12
+        h2 Todo List:
+        .input-group
+          input.form-control(type="text" placeholder="Add todo" v-model="newTodo" @keyup.enter="addTodo")
+          span.input-group-btn
+            button.btn.btn-success(type="button" @click="addTodo") 
+              span.glyphicon.glyphicon-plus
+        ul
+          li(v-for="todo in todolist") 
+            label
+              input(type="checkbox" :checked="todo.done" @change="toggleTodo(todo.key)")
+              span {{ todo.content }}
+      .col-lg-3.col-sm-12
+        h2 Done List:
+        ul
+          li(v-for="todo in donelist") 
+            label 
+              input(type="checkbox" :checked="todo.done" @change="toggleTodo(todo.key)") 
+              span {{ todo.content }}
+            button.btn.btn-xs.btn-danger(@click="deleteTodo(todo.key)")
+              span.glyphicon.glyphicon-trash
 </template>
 
 
@@ -19,13 +38,15 @@ export default {
   },
   computed: {
     ...mapGetters({
-      todos: 'getTodos'
+      todolist: 'getTodos',
+      donelist: 'getDone'
     })
   },
   methods: {
-    // ...mapActions([
-    //   'actionAddTodo'
-    // ])
+    ...mapActions([
+      'toggleTodo',
+      'deleteTodo'
+    ]),
     addTodo() {
       if (this.newTodo === '') return
       this.$store.dispatch('actionAddTodo', this.newTodo)
@@ -38,17 +59,15 @@ export default {
 
 
 <style lang="sass">
-  .todo 
-    width: 400px
-    margin: 0 auto
-    h2
-      margin: 10px 
-    input
-      margin: 10px
-    ul
-      width: 50%
-      margin: 0 auto
-      li
-        list-style: square
+  .todo
+    font-size: 20px
+    margin: 20px
+    h1
+      margin: 20px
+    li 
+      list-style: none
+      margin: 5px
+      span 
+        margin: 3px
 </style>
 
