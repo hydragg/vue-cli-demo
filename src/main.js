@@ -6,8 +6,8 @@ import router from './router'
 import Vuex from 'vuex'
 import BootstrapVue from 'bootstrap-vue'
 import './assets/bootstrap/dist/css/bootstrap.min.css'
-//import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import 'weather-icons/css/weather-icons.css'
 import store from './store'
 
 Vue.use(BootstrapVue)

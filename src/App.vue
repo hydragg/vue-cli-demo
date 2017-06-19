@@ -11,6 +11,8 @@
         router-link(to="/count") Count
       b-nav-item
         router-link(to="/todo") Todo
+      b-nav-item
+        router-link(to='/weather') Weather
     router-view 
 </template>
 

@@ -5,6 +5,7 @@ import C2F from '@/pages/C2F'
 import learnComponent from '@/pages/learnComponent'
 import Count from '@/pages/Count'
 import Todo from '@/pages/Todo'
+import Weather from '@/pages/Weather'
 
 Vue.use(Router)
 
@@ -33,6 +34,10 @@ export default new Router({
       path: '/todo',
       name: 'todo',
       component: Todo
+    },{
+      path: '/weather',
+      name: 'weather',
+      component: Weather
     },
     { path: '/*', redirect: '/hello' }
   ]
