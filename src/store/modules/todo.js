@@ -11,6 +11,7 @@ const state = {
 }
 
 let todoKey = state.todos.length
+
 const getters = {
   getTodos: state => state.todos.filter(todo => !todo.done),
   getDone: state => state.todos.filter(todo => todo.done)
@@ -39,7 +40,7 @@ const mutations = {
       content: newTodo,
       done: false
     })
-    todokey++
+    todoKey++
   },
   [types.TOGGLE_TODO](state, key) {
     console.log('toggle')
@@ -51,10 +52,8 @@ const mutations = {
     } 
   },
   [types.DELETE_TODO](state, key) {
-    console.log('del', key)
     for (let i in state.todos) {
       if (state.todos[i].key === key) {
-        console.log(key)
         state.todos.splice(i, 1)
         break
       }

@@ -23,7 +23,6 @@
 </template>
 
 
-
 <script>
 import { mapGetters, mapActions } from 'vuex'
 import todoItem from '@/components/todoItem'
