@@ -2,7 +2,7 @@
   #app
     b-nav(tabs)
       b-nav-item
-        router-link(to="/hello") Hello
+        router-link(to="/home") Vue & Vuex
       b-nav-item
         router-link(to="/c2f") C2F
       b-nav-item
@@ -13,6 +13,8 @@
         router-link(to="/todo") Todo
       b-nav-item
         router-link(to='/weather') Weather
+      b-nav-item
+        router-link(to='/login') Login
     router-view 
 </template>
 

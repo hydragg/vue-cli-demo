@@ -103,7 +103,7 @@ export default {
     width: 200px
     height: 150px
     font-size: 1.4rem
-    margin: 30px 60px
+    margin: 30px 28px
     padding: 10px 0px 0px 0px
     box-shadow: 1px 1px 5px gray
     transition: box-shadow 1s
